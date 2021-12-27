@@ -60,6 +60,14 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs.return_next_geometric_progression( (243 , 81 , 27 , 9 , 3) , 0 ) , (True , [] ))
 		self.assertEqual( funcs.return_next_geometric_progression( (243 , 81 , 27 , 9 , 3) , 3 ) , (True , [1 , 1/3 , 1/9] ))
 		self.assertEqual( funcs.return_next_geometric_progression( (2 , -4 , 8 , -16 , 32) , 1 ) , (True , [-64] ))
+
+	def test_arithmetic_following(self):
+		self.assertEqual( funcs.return_next_arithmetic_progression( (1 , 2 , 3 , 4 , 5) , 5) , (True , [6 , 7 , 8 , 9 , 10] ))
+		self.assertEqual( funcs.return_next_arithmetic_progression( (1 , 2 , 4 , 8 , 16) , 3 ) , False )
+		self.assertEqual( funcs.return_next_arithmetic_progression( (0 , 0 , 0 , 0 , 0) , 6 ) , (True , [ 0 , 0 , 0 , 0 , 0 , 0 ] ))
+		self.assertEqual( funcs.return_next_arithmetic_progression( (243 , 230 , 217 , 204 , 191) , 0 ) , (True , [] ))
+		self.assertEqual( funcs.return_next_arithmetic_progression( (243 , 230 , 217 , 204 , 191) , 3 ) , (True , [178 , 165 , 152] ))
+		self.assertEqual( funcs.return_next_arithmetic_progression( (2 , -4 , -10 , -16 , -22) , 1 ) , (True , [-28] ))
 			
 if __name__ == '__main__':
 	unittest.main()
