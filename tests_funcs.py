@@ -52,6 +52,14 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs.is_arithmetic( (0 , 0 , 0 , 0 , 1 ) ) , False )
 		self.assertEqual( funcs.is_arithmetic( (1 , 2 , 3 , 5 , 8 ) ) , False )	
 		self.assertEqual( funcs.is_arithmetic( () ) , None )
+
+	def test_geometric_following(self):
+		self.assertEqual( funcs.return_next_geometric_progression( (1 , 2 , 3 , 4 , 5) , 5) , False)
+		self.assertEqual( funcs.return_next_geometric_progression( (1 , 2 , 4 , 8 , 16) , 3 ) , (True , [ 32 , 64 , 128 ] ))
+		self.assertEqual( funcs.return_next_geometric_progression( (0 , 0 , 0 , 0 , 0) , 6 ) , (True , [ 0 , 0 , 0 , 0 , 0 , 0 ] ))
+		self.assertEqual( funcs.return_next_geometric_progression( (243 , 81 , 27 , 9 , 3) , 0 ) , (True , [] ))
+		self.assertEqual( funcs.return_next_geometric_progression( (243 , 81 , 27 , 9 , 3) , 3 ) , (True , [1 , 1/3 , 1/9] ))
+		self.assertEqual( funcs.return_next_geometric_progression( (2 , -4 , 8 , -16 , 32) , 1 ) , (True , [-64] ))
 			
 if __name__ == '__main__':
 	unittest.main()
