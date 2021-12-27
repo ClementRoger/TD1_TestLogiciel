@@ -46,3 +46,22 @@ def std_list(tab):
 		std += (element - moyenne) ** 2
 
 	return math.sqrt( std  / taille )
+
+def is_geometric(tab):
+
+	taille = len(tab)
+	if taille < 1 :
+		return None
+	elif taille < 2:
+		return True
+
+	if tab[0] == 0:
+		q = 0
+	else:		
+		q = tab[1] / tab[0]
+
+	for i in range(taille - 1):
+		if( tab[i + 1] != q * tab[i] ):
+			return False
+
+	return True
