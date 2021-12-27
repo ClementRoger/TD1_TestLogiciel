@@ -3,6 +3,7 @@
 ## Créer une branche
 
 * _git checkout -b nom_branche_
+* _git push -u origin nom_branche_
 
 ## Basculer sur une branche
 
@@ -13,7 +14,7 @@
 * _git pull_ (ou _git fetch origin nom_branche_ puis _git merge origin nom_branche_)
 * _git add nom_fichier_
 * _git commit -m "changements effectués"_
-* _git push -u origin nom_branche_
+* _git push_
 
 ## Autres commandes utiles
 
