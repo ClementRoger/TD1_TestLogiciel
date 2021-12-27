@@ -27,6 +27,12 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs.median_list( (-1 , -5 , 5 , 1) ) , 0 )
 		self.assertEqual( funcs.median_list( (13 , 15 , 11 , 13 , 12 , 17) ) , 13 )
 		self.assertEqual( funcs.median_list( () ) , None )
+
+	def test_std_list(self):	
+		self.assertEqual( funcs.std_list( (1 , 1 , 1 , 1 , 1) ) , 0 )
+		self.assertEqual( funcs.std_list( (6 , 2 , 3 , 1) ) , math.sqrt(3.5) )
+		self.assertEqual( funcs.std_list( (12 , 14 , 9 , 12 , 11 , 14 , 8 , 16) ) , 2.5 )
+		self.assertEqual( funcs.std_list( () ) , None )
 			
 if __name__ == '__main__':
 	unittest.main()
