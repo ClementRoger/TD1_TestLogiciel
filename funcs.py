@@ -81,3 +81,23 @@ def is_arithmetic(tab):
 			return False
 
 	return True
+
+def return_next_geometric_progression(tab , n):
+
+	if not is_geometric(tab):
+		return False
+
+	if tab[0] == 0:
+		q = 0
+	else:		
+		q = tab[1] / tab[0]
+
+	prev = tab[-1]
+	next_list = []
+
+	for i in range(n):
+		new = prev * q
+		next_list.append(new)
+		prev = new
+
+	return True , next_list
