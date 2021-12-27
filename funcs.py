@@ -101,3 +101,20 @@ def return_next_geometric_progression(tab , n):
 		prev = new
 
 	return True , next_list
+
+def return_next_arithmetic_progression(tab , n):
+
+	if not is_arithmetic(tab):
+		return False
+
+	r = tab[1] - tab[0]
+
+	prev = tab[-1]
+	next_list = []
+
+	for i in range(n):
+		new = prev + r
+		next_list.append(new)
+		prev = new
+
+	return True , next_list	
