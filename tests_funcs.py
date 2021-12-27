@@ -43,6 +43,15 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs.is_geometric( (2 , 4 , 8 , 16 , 256 ) ) , False )
 		self.assertEqual( funcs.is_geometric( (2 , 2 , 2 , 2 , 2 ) ) , True )	
 		self.assertEqual( funcs.is_geometric( () ) , None )
+
+	def test_arithmetic_list(self):	
+		self.assertEqual( funcs.is_arithmetic( (1 , 2 , 3 , 4 , 5) ) , True )
+		self.assertEqual( funcs.is_arithmetic( (10 , 5 , 2.5 , 1.25) ) , False )
+		self.assertEqual( funcs.is_arithmetic( (10 , 7 , 4 , 1, -2) ) , True )
+		self.assertEqual( funcs.is_arithmetic( (5 , 5 , 5 , 5, 5 ) ) , True )
+		self.assertEqual( funcs.is_arithmetic( (0 , 0 , 0 , 0 , 1 ) ) , False )
+		self.assertEqual( funcs.is_arithmetic( (1 , 2 , 3 , 5 , 8 ) ) , False )	
+		self.assertEqual( funcs.is_arithmetic( () ) , None )
 			
 if __name__ == '__main__':
 	unittest.main()
