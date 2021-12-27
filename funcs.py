@@ -65,3 +65,19 @@ def is_geometric(tab):
 			return False
 
 	return True
+
+def is_arithmetic(tab):
+
+	taille = len(tab)
+	if taille < 1 :
+		return None
+	elif taille < 2:
+		return True
+	
+	r = tab[1] - tab[0]
+
+	for i in range(taille - 1):
+		if( tab[i + 1] != r + tab[i] ):
+			return False
+
+	return True
