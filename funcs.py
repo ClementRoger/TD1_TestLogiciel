@@ -32,3 +32,17 @@ def median_list(tab):
 	elif taille % 2 == 0:
 		return ( tab[ center_left_index ] + tab[ center_right_index ] ) / 2.0 #tableau de taille paire on renvoie la moyenne des deux éléments centraux
 	return tab[ center_left_index ]	
+
+def std_list(tab):
+
+	taille = len(tab)
+	if(taille < 1):
+		return None
+
+	moyenne = mean_list(tab)
+	std = 0
+
+	for element in tab:
+		std += (element - moyenne) ** 2
+
+	return math.sqrt( std  / taille )
