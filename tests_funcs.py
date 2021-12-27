@@ -33,6 +33,16 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs.std_list( (6 , 2 , 3 , 1) ) , math.sqrt(3.5) )
 		self.assertEqual( funcs.std_list( (12 , 14 , 9 , 12 , 11 , 14 , 8 , 16) ) , 2.5 )
 		self.assertEqual( funcs.std_list( () ) , None )
+
+	def test_geometric_list(self):	
+		self.assertEqual( funcs.is_geometric( (1 , 2 , 4 , 8 , 16) ) , True )
+		self.assertEqual( funcs.is_geometric( (10 , 5 , 2.5 , 1.25) ) , True )
+		self.assertEqual( funcs.is_geometric( (10 , -20 , 40 , -80, 160) ) , True )
+		self.assertEqual( funcs.is_geometric( (10 , 3 , 7 , 2, -1 ) ) , False )
+		self.assertEqual( funcs.is_geometric( (0 , 0 , 0 , 0 , 1 ) ) , False )
+		self.assertEqual( funcs.is_geometric( (2 , 4 , 8 , 16 , 256 ) ) , False )
+		self.assertEqual( funcs.is_geometric( (2 , 2 , 2 , 2 , 2 ) ) , True )	
+		self.assertEqual( funcs.is_geometric( () ) , None )
 			
 if __name__ == '__main__':
 	unittest.main()
