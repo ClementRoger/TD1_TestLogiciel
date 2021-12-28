@@ -26,7 +26,24 @@ class TestFuncs(unittest.TestCase):
 		self.assertEqual( funcs_sql.check_password( cursor , "Bobby" , "motdepasse" ) , True )
 		self.assertEqual( funcs_sql.check_password( cursor , "Bobby" , "azertyuiop" ) , False )
 		self.assertEqual( funcs_sql.check_password( cursor , "Bob" , "motdepasseresistant" ) , True )
-		self.assertEqual( funcs_sql.check_password( cursor , "Bob" , "motdepassepasresistant" ) , False )		
+		self.assertEqual( funcs_sql.check_password( cursor , "Bob" , "motdepassepasresistant" ) , False )
+
+	def test_get_spublickey(self):
+		self.assertEqual( funcs_sql.get_spublickey( cursor , "Bobby" ) , "abcde" )
+		self.assertEqual( funcs_sql.get_spublickey( cursor , "Bob" ) , "key1" )
+
+	def test_get_epublickey(self):
+		self.assertEqual( funcs_sql.get_epublickey( cursor , "Bobby" ) , "klmno" )
+		self.assertEqual( funcs_sql.get_epublickey( cursor , "Bob" ) , "key3" )
+
+	def test_get_epublickey(self):
+		self.assertEqual( funcs_sql.get_sprivatekey( cursor , "Bobby" ) , "fghij" )
+		self.assertEqual( funcs_sql.get_sprivatekey( cursor , "Bob" ) , "key2" )
+
+	def test_get_epprivatekey(self):
+		self.assertEqual( funcs_sql.get_eprivatekey( cursor , "Bobby" ) , "pqrst" )
+		self.assertEqual( funcs_sql.get_eprivatekey( cursor , "Bob" ) , "key4" )	
+
 
 if __name__ == '__main__':
 	unittest.main()
